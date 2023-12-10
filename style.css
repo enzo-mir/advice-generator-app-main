@@ -69,15 +69,6 @@ footer {
     padding: 1em;
     box-shadow: 0px 0px 0px transparent;
     transition: all 0.25s ease-out;
-
-    & > img {
-      width: 100%;
-    }
-
-    &:hover {
-      cursor: pointer;
-      box-shadow: 0px 0px 40px hsl(150, 100%, 66%);
-    }
   }
 
   & > span {
@@ -87,6 +78,13 @@ footer {
     background-size: contain;
     background-position: center;
     background-repeat: no-repeat;
+  }
+}
+
+footer > div {
+  &:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 40px hsl(150, 100%, 66%);
   }
 }
 
