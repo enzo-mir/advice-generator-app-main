@@ -40,6 +40,15 @@ header {
     letter-spacing: 0.25ch;
   }
 }
+
+main {
+  font-size: clamp(1.5em, 2.5vw, 2em);
+  text-align: center;
+
+  & > q {
+    line-height: 2ch;
+  }
+}
 footer {
   position: relative;
   display: grid;
@@ -82,6 +91,10 @@ footer {
 }
 
 @media screen and (max-width: 800px) {
+  article {
+    min-width: 90%;
+  }
+
   footer > span {
     background-image: url(./images/pattern-divider-mobile.svg);
   }

@@ -16,11 +16,31 @@
       <header>
         <p>Advice #<span id="adviceNumb"></span></p>
       </header>
-      <main id="advices"></main>
+      <main>
+        <q id="advices"></q>
+      </main>
       <footer>
         <span></span>
         <div><img src="./images/icon-dice.svg" alt="" /></div>
       </footer>
     </article>
+
+    <script>
+      const advicesContainerText = document.getElementById("advices");
+      const adviceNumb = document.getElementById("adviceNumb");
+
+      const fetchAdvices = async () => {
+        const fetcher = fetch("https://api.adviceslip.com/advice").then((r) => r.json());
+        return await fetcher.then((data) => writeInnerHtml(data));
+      };
+
+      function writeInnerHtml(dataFetched) {
+        const { slip: advices } = dataFetched;
+
+        adviceNumb.innerHTML = advices.id;
+        advicesContainerText.innerHTML = advices.advice;
+      }
+      fetchAdvices();
+    </script>
   </body>
 </html>
